@@ -1,4 +1,4 @@
-## RMSF-net:Accurate Prediction of Protein Structural Flexibility by Integrating Intricate Atomic Structures and Cryo-EM Density Information
+## RMSF-net: Accurate Prediction of Protein Structural Flexibility by Integrating Intricate Atomic Structures and Cryo-EM Density Information
 
 
 ### System requirements
