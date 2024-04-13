@@ -51,7 +51,7 @@ You can visualize the RMSF output using the output pdb file at Chimera or Pymol.
 
 #### Web-based RMSF-net 
 
-The web_based RMSF-net with user-friendly interface can be downloaded from  "https://pan.baidu.com/s/18MLxSjfn404-6TIGR5ECvQ" with extraction code "rmsf",as follows:
+The web-based RMSF-net with user-friendly interface can be downloaded from  "https://pan.baidu.com/s/18MLxSjfn404-6TIGR5ECvQ" with extraction code "rmsf", as follows:
 <div style="text-align:center">
   <img src="images/image.png" alt="Alt text" />
 </div>
@@ -59,7 +59,7 @@ including:
 
 1. RMSF-net.exe, an install file on Windows System. Run this file, and RMSF-net will be installed as a software.
 
-2. RMSF-net source code (web version). Source code of the web-version RMSF-net. This repository is its backend part.
+2. RMSF-net source code (web-based version). Source code of the web-based RMSF-net. This repository is its backend part.
 
 #### RMSF annotated pdb files
 
