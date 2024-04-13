@@ -234,7 +234,7 @@ def parse_map(map_file, r=1.5):
 
 class predict_map:
 
-    def __init__(self, pdb_file, map_file, output_dir, chimera_path="/home/engineer/chimera/bin/chimera", data_file=None, contour_level=None, mode=None) -> None:
+    def __init__(self, pdb_file, map_file, output_dir, chimera_path="./chimera/bin/chimera", data_file=None, contour_level=None, mode=None) -> None:
 
         self.pdb_file = pdb_file
         self.map_file = map_file
