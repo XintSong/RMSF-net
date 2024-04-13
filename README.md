@@ -4,7 +4,7 @@ We recommened Linux system, with GPUs or CPUs support (This script is for CPU ve
 
 ### Install
 
-1. Downlaod and install UCSF chimera from  https://www.cgl.ucsf.edu/chimera/download.html, and set environment variable "CHIMERA_PATH" to the path to chimera exeutable file, e.g., "path_to_chimera/bin/chimera".
+1. Downlaod and install UCSF chimera from  https://www.cgl.ucsf.edu/chimera/download.html, and set environment variable "CHIMERA_PATH" as the path to chimera exeutable file, e.g., "path_to_chimera/bin/chimera".
 
 2. install Anaconda or Miniconda.
 
