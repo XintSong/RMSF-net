@@ -15,7 +15,7 @@ We recommened Linux system, with GPUs or CPUs support (This script is for CPU ve
 
 
 ### Usage
-
+For flexibility prediction, execute command:
 ```
 conda activate rmsf-net
 python predict.py -p pdb_file -e emd_file -o output_dir -c contour_level -m mode 
