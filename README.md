@@ -15,9 +15,12 @@ We recommened Linux system, with GPUs or CPUs support (This script is for CPU ve
 
 
 ### Usage
-conda activate rmsf-net
 
+```python
+conda activate rmsf-net
 python predict.py -p pdb_file -e emd_file -o output_dir -c contour_level -m mode 
+
+``````
 
 - pdb_file: The user-uploaded PDB file in .pdb format.
 - emd_file: The user-uploaded cryo-EM map in .map or .mrc format.
@@ -27,11 +30,11 @@ python predict.py -p pdb_file -e emd_file -o output_dir -c contour_level -m mode
 We recommened to use mode 3, which is the main method in our work.
 
 Example: 
-python predict.py -p "data/6FBV.pdb" -e "data/emd_4230.map" -o "results" -m 3 
+> python predict.py -p "data/6FBV.pdb" -e "data/emd_4230.map" -o "results" -m 3 
 
 If you can not set chimera environment path , you can also specify the chimera exeutable path at the command line, as following: 
 
-python predict.py -p "data/6FBV.pdb" -e "data/emd_4230.map" -o "results" -m 3 -ch "path_to_chimera/bin/chimera"
+> python predict.py -p "data/6FBV.pdb" -e "data/emd_4230.map" -o "results" -m 3 -ch "path_to_chimera/bin/chimera"
  
 
 
