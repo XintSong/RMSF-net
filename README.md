@@ -34,7 +34,7 @@ Example:
 python predict.py -p "data/6FBV.pdb" -e "data/emd_4230.map" -o "results" -m 3 
 ```
 
-If you can not set chimera environment path , you can also specify the chimera exeutable path at the command line, as following: 
+If you can not set chimera environment variable , you can also specify the chimera exeutable path at the command line, as following: 
 
 ```
 python predict.py -p "data/6FBV.pdb" -e "data/emd_4230.map" -o "results" -m 3 -ch "path_to_chimera/bin/chimera"
