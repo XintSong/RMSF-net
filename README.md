@@ -13,7 +13,6 @@ We recommened Linux system, with GPUs or CPUs support (This script is for CPU ve
 3. Run ./install.sh, to create a python environment called rmsf-net. 
 
 
-
 ### Usage
 For flexibility prediction, execute command:
 ```
@@ -48,6 +47,26 @@ Run the command line above, the program will generate PDB simulated map (sim_map
 The predicted RMSF will be normalized and mapped onto the bfactor column of the original PDB file, saved to  "./results" directory according to the mode.  
 
 You can visualize the RMSF output using the output pdb file at Chimera or Pymol.
+
+
+#### Web-based RMSF-net 
+
+The web_based RMSF-net with user-friendly interface can be downloaded from  "https://pan.baidu.com/s/18MLxSjfn404-6TIGR5ECvQ" with extraction code "rmsf",as follows:
+<div style="text-align:center">
+  <img src="images/image.png" alt="Alt text" />
+</div>
+including:
+
+1. RMSF-net.exe, an install file on Windows System. Run this file, and RMSF-net will be installed as a software.
+
+2. RMSF-net source code (web version). Source code of the web-version RMSF-net. This repository is its backend part.
+
+#### RMSF annotated pdb files
+
+The datasets containing MD simulation annotations for RMSF-net training and evaluation are accessible for download
+from "https://pan.baidu.com/s/1OGuqc-Myifx--_qa9kvDug", with the extraction code "rmsf".
+
+
 
 
 
