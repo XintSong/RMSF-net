@@ -465,7 +465,7 @@ def main():
                       map_file,
                       output_dir, data_file=data_file, contour_level=contour_level, mode=mode)
 
-    # python predict.py -p "./data/7PQQ.pdb" -e "./data/emd_13596.map" -o "./data/predict"  -c 0.2
+    # python predict.py -p "./data/7PQQ.pdb" -e "./data/emd_13596.map" -o "./data/predict"  -c 0.2 -m 3
 
     pre.predict()
 
