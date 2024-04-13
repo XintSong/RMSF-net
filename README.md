@@ -50,7 +50,7 @@ Typical prediction on CPUs will cost less than 3 minutes.
 #### Output
 Run the command line above, the program will generate PDB simulated map (sim_map.mrc) and data file (data.pth) and save to "./results" directory. 
 
-The predicted RMSF will be normalized and mapped onto the bfactor column of the original PDB file, saved to  "./results" directory according to the mode.  
+The predicted RMSF will be normalized and mapped onto the bfactor column of the original PDB file, saved to  "./results" directory according to the mode, e.g. "/results/pdb_plus_cryoem/rmsf_nor.pdb" for mode 3.
 
 You can visualize the RMSF output using the output pdb file at Chimera or Pymol.
 
