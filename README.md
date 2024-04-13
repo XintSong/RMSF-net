@@ -3,7 +3,7 @@
 
 ### System requirements
 - Ubuntu 18.04
-- 
+<!-- - CUDA Toolkit version: 11.3 (if use GPUs, any compatibility version is ok) -->
 
 We recommened Linux system, with GPUs or CPUs support (This script is for CPU version, simply editing will be suitable for GPU support).
 
@@ -14,6 +14,8 @@ We recommened Linux system, with GPUs or CPUs support (This script is for CPU ve
 2. Install Anaconda or Miniconda.
 
 3. Run ./install.sh, to create a python environment called rmsf-net. 
+
+Typical installation time is expected to be less than 30 minutes.
 
 
 ### Usage
@@ -41,7 +43,8 @@ If you can not set chimera environment variable , you can also specify the chime
 ```
 python predict.py -p "data/6FBV.pdb" -e "data/emd_4230.map" -o "results" -m 3 -ch "path_to_chimera/bin/chimera"
 ```
- 
+
+Typical prediction on CPUs will cost less than three minutes.
 
 
 #### Output
