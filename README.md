@@ -1,3 +1,5 @@
+## RMSF-net
+
 ### System requirements
 
 We recommened Linux system, with GPUs or CPUs support (This script is for CPU version, simply editing will be suitable for GPU support).
@@ -10,7 +12,7 @@ We recommened Linux system, with GPUs or CPUs support (This script is for CPU ve
 
 3. simple run ./install.sh, to create a python environment called rmsf-net. 
 
-## RMSF-net
+
 
 ### Usage
 conda activate rmsf-net
