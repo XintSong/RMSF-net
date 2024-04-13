@@ -1,7 +1,9 @@
-## RMSF-net
+## RMSF-net:Accurate Prediction of Protein Structural Flexibility by Integrating Intricate Atomic Structures and Cryo-EM Density Information
+
 
 ### System requirements
-Ubuntu 18.04, UCSF chimera, 
+- Ubuntu 18.04
+- 
 
 We recommened Linux system, with GPUs or CPUs support (This script is for CPU version, simply editing will be suitable for GPU support).
 
