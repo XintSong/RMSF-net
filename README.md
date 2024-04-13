@@ -69,8 +69,13 @@ including:
 
 #### RMSF annotated pdb files
 
+<div style="text-align:center">
+  <img src="images/image_data.png" alt="Alt text" />
+</div>
+
 The datasets containing MD simulation annotations for RMSF-net training and evaluation are accessible for download
-from "https://pan.baidu.com/s/1OGuqc-Myifx--_qa9kvDug", with the extraction code "rmsf".
+from "https://pan.baidu.com/s/1OGuqc-Myifx--_qa9kvDug", with the extraction code "rmsf", as follows:
+
 
 
 
