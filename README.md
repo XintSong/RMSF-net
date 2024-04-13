@@ -1,6 +1,7 @@
 ## RMSF-net
 
 ### System requirements
+Ubuntu 18.04, UCSF chimera, 
 
 We recommened Linux system, with GPUs or CPUs support (This script is for CPU version, simply editing will be suitable for GPU support).
 
@@ -21,12 +22,12 @@ python predict.py -p pdb_file -e emd_file -o output_dir -c contour_level -m mode
 
 ```
 
-- pdb_file: The user-uploaded PDB file in .pdb format.
-- emd_file: The user-uploaded cryo-EM map in .map or .mrc format.
+- pdb_file: The path to PDB file in .pdb format.
+- emd_file: The path to cryo-EM map in .map or .mrc format.
 - output_dir: The path for prediction output, can be manually specified.
 - mode: The mode selected by the user, which can be 1, 2, or 3, corresponding to the three options "Only Cryo-EM","Only PDB model","Cryo-EM plus PDB model"
 
-We recommened to use mode 3, which is the main method in our work.
+We recommened to run this script for your protein of interest with its corresponding cryo-EM map (2-4A) and PDB file on mode 3, which is the main method in our work.
 
 Example:
 ```
