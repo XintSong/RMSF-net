@@ -44,7 +44,7 @@ If you can not set chimera environment variable , you can also specify the chime
 python predict.py -p "data/6FBV.pdb" -e "data/emd_4230.map" -o "results" -m 3 -ch "path_to_chimera/bin/chimera"
 ```
 
-Typical prediction on CPUs will cost less than three minutes.
+Typical prediction on CPUs will cost less than 3 minutes.
 
 
 #### Output
