@@ -38,6 +38,11 @@ def get_parser():
     )
 
     parser.add_argument(
+        "-ch", "--chimera_path", type=str,
+        help="chimera_path"
+    )
+
+    parser.add_argument(
         "-c", "--contour", type=str,
         help="contour level"
     )
@@ -51,7 +56,7 @@ def get_parser():
 
 
 def normalize_and_avg_rmsf(pdb, target_pdb):
-    print(pdb, target_pdb)
+    #print(pdb, target_pdb)
     mol = Molecule(pdb)
     mol.filter('protein')
     bf = mol.beta
@@ -85,7 +90,7 @@ def normalize_and_avg_rmsf(pdb, target_pdb):
 
 def box2map(ana_pre, keep_list, info, box_size=40, core_size=10, pad=None):
 
-    print(ana_pre.shape)
+    # print(ana_pre.shape)
     csize = (ana_pre.shape[-1]-core_size)//2
 
     if csize == 0:
@@ -161,7 +166,7 @@ def write_rmsf_pdb(pdb_file, ana_map, info, save_dir, r=1.5, protein=True):
     mol.set('beta', np.array(ana_list))
     save_file = f"{save_dir}/rmsf.pdb"
     mol.write(save_file)
-    print(f"the pdb visualization file saved at {save_file}")
+    # print(f"the pdb visualization file saved at {save_file}")
     return save_file
 
 
@@ -234,7 +239,7 @@ def parse_map(map_file, r=1.5):
 
 class predict_map:
 
-    def __init__(self, pdb_file, map_file, output_dir, chimera_path="./chimera/bin/chimera", data_file=None, contour_level=None, mode=None) -> None:
+    def __init__(self, pdb_file, map_file, output_dir, chimera_path=None, data_file=None, contour_level=None, mode=None) -> None:
 
         self.pdb_file = pdb_file
         self.map_file = map_file
@@ -242,6 +247,8 @@ class predict_map:
             os.mkdir(output_dir)
 
         if not data_file:
+            if chimera_path is None:
+                chimera_path = os.environ.get('CHIMERA_PATH')
             new_data = gen_data(map_file, pdb_file, output_dir,
                                 contour_level, chimera_path=chimera_path)
             self.data_file = new_data.get_data()
@@ -458,12 +465,16 @@ def main():
     map_file = args.emd
     data_file = args.data
     output_dir = args.out_dir
-    contour_level = float(args.contour)
+    if args.contour is not None:
+        contour_level = float(args.contour)
+    else:
+        contour_level=None
+    chimera_path=args.chimera_path
     mode = args.mode
 
     pre = predict_map(pdb_file,
                       map_file,
-                      output_dir, data_file=data_file, contour_level=contour_level, mode=mode)
+                      output_dir, data_file=data_file, chimera_path=chimera_path, contour_level=contour_level, mode=mode)
 
     # python predict.py -p "data/6FBV.pdb" -e "data/emd_4230.map" -o "results"  -c 0 -m 3
 
