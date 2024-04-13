@@ -8,9 +8,9 @@ We recommened Linux system, with GPUs or CPUs support (This script is for CPU ve
 
 1. Downlaod and install UCSF chimera from  https://www.cgl.ucsf.edu/chimera/download.html, and set environment variable "CHIMERA_PATH" as the path to chimera exeutable file, e.g., "path_to_chimera/bin/chimera".
 
-2. install Anaconda or Miniconda.
+2. Install Anaconda or Miniconda.
 
-3. simple run ./install.sh, to create a python environment called rmsf-net. 
+3. Run ./install.sh, to create a python environment called rmsf-net. 
 
 
 
