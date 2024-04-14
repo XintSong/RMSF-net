@@ -1,4 +1,4 @@
-## RMSF-net: Accurate Prediction of Protein Structural Flexibility by Integrating Intricate Atomic Structures and Cryo-EM Density Information
+# RMSF-net: Accurate Prediction of Protein Structural Flexibility by Integrating Intricate Atomic Structures and Cryo-EM Density Information
 
 
 ### System requirements
@@ -47,7 +47,7 @@ python predict.py -p "data/6FBV.pdb" -e "data/emd_4230.map" -o "results" -m 3 -c
 Typical prediction on CPUs will cost less than 3 minutes.
 
 
-#### Output
+### Output
 Run the command line above, the program will generate PDB simulated map (sim_map.mrc) and data file (data.pth) and save to "./results" directory. 
 
 The predicted RMSF will be normalized and mapped onto the bfactor column of the original PDB file, saved to  "./results" directory according to the mode, e.g. "/results/pdb_plus_cryoem/rmsf_nor.pdb" for mode 3.
@@ -55,7 +55,7 @@ The predicted RMSF will be normalized and mapped onto the bfactor column of the 
 You can visualize the RMSF output using the output pdb file at Chimera or Pymol.
 
 
-#### Web-based RMSF-net 
+### Web-based RMSF-net 
 
 The web-based RMSF-net with user-friendly interface can be downloaded from  "https://pan.baidu.com/s/18MLxSjfn404-6TIGR5ECvQ" with extraction code "rmsf", as follows:
 <div style="text-align:center">
@@ -69,7 +69,7 @@ including:
 
 The detailed description of this software and its interface is provided in Section 5 "Accessible and user-friendly RMSF-net" of the main text.
 
-#### RMSF annotated pdb files
+### RMSF annotated pdb files
 
 <div style="text-align:center">
   <img src="images/image_data.png" alt="Alt text" />
