@@ -5,7 +5,7 @@ Here is an official implementation for RMSF-net. (The current code is a temporar
 This script is mainly for CPU version, which can be adapted to general computing devices while maintaining a relatively fast processing speed.
 
 ### System requirements
-- Ubuntu 18.04 
+- Ubuntu 18.04 (recommend, any compatible system is OK.)
 <!-- - CUDA Toolkit version: 11.3 (if use GPUs, any compatibility version is ok) -->
 
 
