@@ -5,7 +5,7 @@
 - Ubuntu 18.04
 <!-- - CUDA Toolkit version: 11.3 (if use GPUs, any compatibility version is ok) -->
 
-We recommened Linux system, with GPUs or CPUs support (This script is for CPU version, simply editing will be suitable for GPU support).
+We recommened Linux system, with GPUs or CPUs support (This script is mainly for CPU version, which can be adapted to general computing devices and ensures a fast processing speed, simply editing will be suitable for GPU support).
 
 ### Install
 
