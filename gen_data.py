@@ -165,7 +165,7 @@ def split_map_and_select_item(map, atom_map, contour_level, box_size=40, core_si
 
 def get_smi_map(pdb_file, res, out_file, chimera_path=None, number=0.1, r=1.5):
 
-    chimera_script = open('./measure.cmd', 'w')
+    chimera_script = open('./chimera_exe.cmd', 'w')
     chimera_script.write('open ' + pdb_file + '\n'
                          'molmap #0 '+str(res)+' gridSpacing  ' + str(r)+'\n'
                          'volume #'+str(number) + ' save ' +
