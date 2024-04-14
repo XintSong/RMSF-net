@@ -1,11 +1,13 @@
 ## RMSF-net: Accurate Prediction of Protein Structural Flexibility by Integrating Intricate Atomic Structures and Cryo-EM Density Information
 
+Here is an official implementation for RMSF-net. (The current code is a temporary version which will be added more complete features in the future.)
 
 ### System requirements
-- Ubuntu 18.04
+- Ubuntu 18.04 
 <!-- - CUDA Toolkit version: 11.3 (if use GPUs, any compatibility version is ok) -->
 
-We recommened Linux system, with GPUs or CPUs support (This script is mainly for CPU version, which can be adapted to general computing devices and ensures a fast processing speed, simply editing will be suitable for GPU support).
+This script is mainly for CPU version, which can be adapted to general computing devices while maintaining a relatively fast processing speed.
+<!-- simply editing will be suitable for GPU support. -->
 
 ### Install
 
