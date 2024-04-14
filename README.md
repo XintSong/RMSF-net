@@ -36,7 +36,7 @@ python predict.py -p pdb_file -e emd_file -o output_dir  -m mode
 - mode: The mode selected by the user, which can be 1, 2, or 3, corresponding to the three options "Only Cryo-EM","Only PDB model","Cryo-EM plus PDB model"
 
 
-We recommened to run this script for your protein of interest with its corresponding cryo-EM map (2-4A) and PDB file on mode 3, which is the main method in our work.
+We recommened to run this script for your protein of interest with its corresponding cryo-EM map (2-4 Å) and PDB file on mode 3, which is the main method in our work.
 
 Example:
 ```
