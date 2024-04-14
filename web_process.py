@@ -1,4 +1,4 @@
-from .predict import *
+from predict import *
 
 
 def web_process(pdb_file, map_file, contour_level, mode, chimera_path=None ,data_file=None, output_dir=None):
@@ -24,7 +24,7 @@ def web_process(pdb_file, map_file, contour_level, mode, chimera_path=None ,data
 if __name__=="__main__":
 
     pdb_file="./data/7PQQ.pdb"
-    map_file= "./data//emd_13596.map"
+    map_file= "./data/emd_13596.map"
     contour_level=0.2
     mode=2
     output_dir="./data/predict"
