@@ -67,7 +67,7 @@ including:
 
 2. RMSF-net source code (web-based version). Source code of the web-based RMSF-net. This repository is its backend part. 
 
-The detailed description of this software and its interface is provided in Section 5 "Accessible and user-friendly RMSF-net" of the main text.
+**The detailed description of this software and its interface is provided in Section 5 "Accessible and user-friendly RMSF-net" of the main text.**
 
 ### RMSF annotated pdb files
 
