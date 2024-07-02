@@ -60,9 +60,9 @@ The predicted RMSF will be normalized and mapped onto the bfactor column of the 
 You can visualize the RMSF output using the output pdb file at UCSF Chimera or PyMOL.
 
 
-### Web-based RMSF-net 
+### Web-Fronted RMSF-net software
 
-The web-based RMSF-net with user-friendly interface can be downloaded from  "https://pan.baidu.com/s/18MLxSjfn404-6TIGR5ECvQ" with extraction code "rmsf", as follows:
+<!-- The web-based RMSF-net with user-friendly interface can be downloaded from  "https://pan.baidu.com/s/18MLxSjfn404-6TIGR5ECvQ" with extraction code "rmsf", as follows:
 <div style="text-align:center">
   <img src="images/image.png" alt="Alt text" />
 </div>
@@ -70,18 +70,19 @@ including:
 
 1. RMSF-net.exe, an installation file on Windows System. Run this file, and RMSF-net will be installed as a software.
 
-2. RMSF-net source code (web-based version). Source code of the web-based RMSF-net. This repository is its backend part. 
+2. RMSF-net source code (web-based version). Source code of the web-based RMSF-net. This repository is its backend part.  -->
+The web-fronted RMSF-net with user-friendly interface can be downloaded from Figshare (https://doi.org/10.6084/m9.figshare.25893670).
 
-**The detailed description of this software and its interface are provided in Section 5 "Accessible and user-friendly RMSF-net" of the main text.**
+**The detailed description of this software and its interface are provided in the section "Accessible and user-friendly RMSF-net" of the paper's Supplementary Material.**
 
 ### RMSF annotated pdb files
 
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <img src="images/image_data.png" alt="Alt text" />
-</div>
+</div> -->
 
 The datasets containing MD simulation annotations for RMSF-net training and evaluation are accessible for download
-from "https://pan.baidu.com/s/1OGuqc-Myifx--_qa9kvDug", with the extraction code "rmsf".
+from Figshare (https://doi.org/10.6084/m9.figshare.25893670).
 
 
 
