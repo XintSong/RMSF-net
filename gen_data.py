@@ -159,37 +159,68 @@ def split_map_and_select_item(map, atom_map, contour_level, box_size=40, core_si
         i = i+1
     print(f"the selected maps: {len(keep_list)}")
     print(f"the total maps: {len(total_list)}")
+        
+    # Limit to first 70 boxes for testing
+    box_list = box_list[:70]
+    keep_list = keep_list[:70]
+    total_list = total_list[:70]
 
     return np.asarray(box_list), np.asarray(keep_list), np.asarray(total_list)
 
+#import subprocess
 
 def get_smi_map(pdb_file, res, out_file, chimera_path=None, number=0.1, r=1.5):
+    # Create ChimeraX command file
+    with open('./chimera_exe.cxc', 'w') as chimera_script:
+        chimera_script.write(
+            f'open {pdb_file}\n'
+            f'molmap #1 {res} gridSpacing {r}\n'
+            f'volume #2\n'
+            f'save {out_file}\n'
+            'close all\n'
+        'exit\n'
+        )
 
-    chimera_script = open('./chimera_exe.cmd', 'w')
-    chimera_script.write('open ' + pdb_file + '\n'
-                         'molmap #0 '+str(res)+' gridSpacing  ' + str(r)+'\n'
-                         'volume #'+str(number) + ' save ' +
-                         str(out_file) + '\n'
-                         'close all'
-                         )
-    chimera_script.close()
-    print(f'chimera_path:{chimera_path}')
-    output = subprocess.check_output(
-        [chimera_path, '--nogui', chimera_script.name])
-    return output
+    print(f'chimera_path: {chimera_path}')
+
+    try:
+        output = subprocess.check_output(
+            [chimera_path, '--nogui', './chimera_exe.cxc'],
+            stderr=subprocess.STDOUT
+        )
+        decoded_output = output.decode() if output else ""
+        print("ChimeraX output:")
+        print(decoded_output)
+        return decoded_output
+    except subprocess.CalledProcessError as e:
+        print("ChimeraX failed with error:")
+        error_output = e.output.decode() if e.output else "No output captured."
+        print(error_output)
+        return None
 
 
-def sim_map_ot(pdb_file, res, out_file, number=0.1, r=1.5, chimera_path=None):
+# def sim_map_ot(pdb_file, res, out_file, number=0.1, r=1.5, chimera_path=None):
+def sim_map_ot(pdb_file, res, out_file, number=2, r=1.5, chimera_path=None):
+    output = get_smi_map(pdb_file, res, out_file, chimera_path=chimera_path, r=r)
 
-    output = get_smi_map(pdb_file, res,
-                         out_file, chimera_path=chimera_path, r=r)
-    s = output.decode('utf-8').splitlines()
-    if "Wrote file" not in s[-1]:
-        output = get_smi_map(pdb_file, res,
-                             out_file, r=r, number=1, chimera_path=chimera_path)
-        s = output.decode('utf-8').splitlines()
-        if "Wrote file" not in s[-1]:
+    if output is None:
+        return False
+
+    s = output.splitlines()
+    if not s or "Wrote file" not in s[-1]:
+        output = get_smi_map(pdb_file, res, out_file, r=r, number=1, chimera_path=chimera_path)
+        if output is None:
             return False
+        s = output.splitlines()
+#        if not s or "Wrote file" not in s[-1]:
+#            return False
+        if os.path.exists(out_file):
+                return True
+        else:
+                print(f"Output file {out_file} not found.")
+
+        return False
+
     return True
 
 
@@ -220,6 +251,7 @@ class exp_2_sim:
                 print(f"too big,bigger than 3 digits")
         assert (len(result) == 3)
         result.reverse()
+
         return result
 
     def index_start(self, index, box_size=40, core_size=10, step_size=40):
@@ -240,6 +272,7 @@ class exp_2_sim:
 
         x11, y11, z11 = x11+add_center, y11+add_center, z11+add_center
         exp_index = [x11, y11, z11]
+
         return exp_index
 
     def trans_index_exp2sim(self, exp_index):
@@ -323,17 +356,22 @@ class gen_data:
         self.chimera_path = chimera_path
 
     def get_data(self, r=1.5):
+        print("Starting data generation in gen_data.get_data()...")
 
         sim_map_file = f"{self.output_dir}/sim_map.mrc"
 
         map, info = parse_map(self.exp_map_file, r=r)
+        print("Parsed experimental map and generated atom map.")
         atom_map = get_atom_map(self.pdb_file, map.shape, info)
 
+        print("Split map and selected items.")
         intensity_list, keep_list, total_list = split_map_and_select_item(
             map, atom_map, self.contour_level, box_size=40, core_size=10)
+        print("Calling ChimeraX to generate simulated map...")
 
         sim_yes = sim_map_ot(self.pdb_file, 4, sim_map_file,
                              r=r, chimera_path=self.chimera_path)
+        print("Simulated map generated successfully.")
         if not sim_yes:
             print(" sim map not succeed")
             sys.exit()
@@ -343,6 +381,7 @@ class gen_data:
         sim_box_list = expsim.gene_boxs()
 
         data_file = f"{self.output_dir}/data.pth"
+        print("Saving tensor data to .pth file...")
 
         torch.save({'intensity': torch.from_numpy(intensity_list).unsqueeze_(1), 'sim_intensity': torch.from_numpy(sim_box_list).unsqueeze_(1),
                     'keep_list': torch.from_numpy(keep_list), 'total_list': torch.from_numpy(total_list)}, data_file)

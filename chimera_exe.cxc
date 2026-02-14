@@ -1,0 +1,7 @@
+# This version works from at least ChimeraX 1.1.1
+open data/6FBV.pdb
+molmap #1 4 gridSpacing 1.5
+volume #2
+save results/sim_map.mrc
+close all
+exit

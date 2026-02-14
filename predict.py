@@ -1,4 +1,4 @@
-import torch
+mport torch
 import torch.nn as nn
 import torch.functional as F
 # import matplotlib.pyplot as plt
@@ -459,6 +459,7 @@ class predict_map:
 
 
 def main():
+    print("Starting RMSF-net prediction...")
 
     args = get_parser()
     pdb_file = args.pdb
@@ -471,12 +472,14 @@ def main():
         contour_level=None
     chimera_path=args.chimera_path
     mode = args.mode
+    print(f"Parsed arguments: PDB={pdb_file}, MAP={map_file}, DATA={data_file}, OUT={output_dir}, CONTOUR={contour_level}, CHIMERA={chimera_path}, MODE={mode}")
 
     pre = predict_map(pdb_file,
                       map_file,
                       output_dir, data_file=data_file, chimera_path=chimera_path, contour_level=contour_level, mode=mode)
 
     # python predict.py -p "data/6FBV.pdb" -e "data/emd_4230.map" -o "results"  -c 0 -m 3
+    print("Calling predict() method...")
 
     pre.predict()
 
